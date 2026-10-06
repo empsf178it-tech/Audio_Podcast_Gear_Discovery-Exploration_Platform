@@ -37,7 +37,10 @@
         </div>
 
         <div class="desktop-nav-items d-none d-xl-flex align-items-center gap-3">
-          <a href="products.html#comparisonDrawer" class="btn btn-sm btn-vault-secondary">
+          <a href="products.html#productSearchInput" class="btn btn-sm btn-vault-secondary" title="Search Products">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg> Search
+          </a>
+          <a href="products.html#comparisonDrawer" class="btn btn-sm btn-vault-secondary" title="View Comparison">
             Compare (<span id="navCompareCount">0</span>)
           </a>
           <a href="products.html" class="btn btn-sm btn-vault-primary">Explore Gear</a>
@@ -66,7 +69,7 @@
     <div class="mobile-nav-links">
       <div class="mobile-nav-item"><a href="index.html" class="text-primary">Home</a><span class="vault-badge">01</span></div>
       <div class="mobile-nav-item"><a href="products.html" class="text-primary">Products</a><span class="vault-badge">02</span></div>
-      <div class="mobile-nav-item"><a href="guides.html" class="text-primary">Guides</a><span class="vault-badge">03</span></div>
+      <div class="mobile-nav-item active"><a href="guides.html" class="text-primary active">Guides</a><span class="vault-badge">03</span></div>
       <div class="mobile-nav-item"><a href="warranty.html" class="text-primary">Warranty</a><span class="vault-badge">04</span></div>
       <div class="mobile-nav-item"><a href="products.html#comparisonDrawer" class="text-primary">Compare Gear</a><span class="vault-badge">05</span></div>
       <div class="mobile-nav-item pt-3">
@@ -258,15 +261,15 @@
                 <input type="range" class="form-range" id="noiseRangeInput" min="0" max="100" value="15">
               </div>
 
-              <div class="p-3 rounded bg-secondary border border-secondary text-center">
-                <span class="small d-block text-muted-custom mb-1">Current Acoustic State</span>
+              <div class="p-3 rounded text-center" style="background-color: var(--bg-card); border: 1px solid var(--border-subtle);">
+                <span class="small d-block text-light opacity-75 mb-1 fw-medium">Current Acoustic State</span>
                 <strong id="noiseStatusText" class="h6 mb-0 d-block" style="color: #22C55E;">Clean Studio Recording Level (Low Noise)</strong>
               </div>
             </div>
 
             <div class="col-lg-7">
-              <div class="p-4 rounded bg-dark border border-secondary">
-                <span class="small text-muted-custom d-block mb-3 text-center">Simulated Sound Wave FFT Response</span>
+              <div class="p-4 rounded text-center" style="background-color: var(--bg-card); border: 1px solid var(--border-subtle);">
+                <span class="small text-light opacity-75 d-block mb-3 text-center fw-medium">Simulated Sound Wave FFT Response</span>
                 <div class="d-flex align-items-end justify-content-between gap-1" style="height: 80px;">
                   <div class="sound-wave-bar"></div>
                   <div class="sound-wave-bar"></div>

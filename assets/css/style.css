@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
+  color-scheme: dark;
   --bg-main: #0B0F12;
   --bg-secondary: #11171C;
   --bg-card: #161D22;
@@ -48,6 +49,16 @@ html {
   font-size: 16px;
   background-color: var(--bg-main);
   color: var(--text-primary);
+}
+
+::selection {
+  background-color: var(--accent-cyan) !important;
+  color: #0B0F12 !important;
+}
+
+::-moz-selection {
+  background-color: var(--accent-cyan) !important;
+  color: #0B0F12 !important;
 }
 
 html, body {
@@ -429,6 +440,35 @@ header {
   opacity: 0;
   transform: translateY(15px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0.25rem 0;
+  border-left: 3px solid transparent;
+}
+
+.mobile-nav-item a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-item a:hover,
+.mobile-nav-item a.active,
+.mobile-nav-item.active a {
+  color: var(--accent-cyan) !important;
+}
+
+.mobile-nav-item.active,
+.mobile-nav-item:has(a.active) {
+  padding-left: 0.75rem;
+  border-left-color: var(--accent-cyan);
+}
+
+.mobile-nav-item.active .vault-badge,
+.mobile-nav-item a.active + .vault-badge,
+.mobile-nav-item:has(a.active) .vault-badge {
+  background: var(--accent-cyan) !important;
+  color: #0B0F12 !important;
+  font-weight: 700;
+  box-shadow: 0 0 12px var(--accent-cyan-glow);
 }
 
 .mobile-overlay.active .mobile-nav-item {
@@ -882,6 +922,7 @@ header {
   padding: 0.75rem 1rem;
   width: 100%;
   transition: all var(--transition-fast);
+  color-scheme: dark;
 }
 
 .vault-form-control:focus {
@@ -894,6 +935,24 @@ header {
 
 .vault-form-control::placeholder {
   color: var(--text-secondary);
+}
+
+/* Date Picker Styling - Pure White High Contrast Calendar Icon */
+input[type="date"],
+input[type="date"].vault-form-control {
+  color-scheme: dark !important;
+  color: var(--text-primary) !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+.vault-form-control::-webkit-calendar-picker-indicator {
+  opacity: 0 !important;
+  cursor: pointer !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Toast Notification */

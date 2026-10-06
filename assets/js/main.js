@@ -48,6 +48,20 @@ function initMobileMenu() {
 
   if (!openBtn || !overlay) return;
 
+  // Auto-highlight active link based on current page URL
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const mobileNavItems = overlay.querySelectorAll('.mobile-nav-item');
+  mobileNavItems.forEach(item => {
+    const link = item.querySelector('a');
+    if (link) {
+      const href = link.getAttribute('href');
+      if (href && (href === currentPath || (currentPath === '' && href === 'index.html') || (currentPath.includes('product-detail') && href === 'products.html'))) {
+        item.classList.add('active');
+        link.classList.add('active');
+      }
+    }
+  });
+
   function openMenu() {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
